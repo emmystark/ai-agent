@@ -8,6 +8,11 @@ from sklearn.cluster import KMeans
 from umap import UMAP
 
 
+from dotenv import load_dotenv
+load_dotenv()
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 data_URL =  "https://raw.githubusercontent.com/keitazoumana/Experimentation-Data/main/Musical_instruments_reviews.csv"
 
 review_df = pd.read_csv(data_URL)
